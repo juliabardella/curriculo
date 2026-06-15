@@ -19,7 +19,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: sans-serif;
             background-color: #f4f6f9;
             color: #1e293b;
             min-height: 100vh;
@@ -158,9 +158,7 @@
 
     <div class="container my-5">
         <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold">Meus Projetos Técnicos</h1>
-            <p class="fs-5 text-secondary max-width-600 mx-auto">Uma análise detalhada das aplicações de software
-                estruturadas de ponta a ponta.</p>
+            <h1 class="display-4 fw-bold">Meus Projetos</h1>
         </div>
 
         <div id="portfolioCarousel" class="carousel slide shadow-lg rounded-4" data-bs-ride="false">
@@ -388,40 +386,47 @@
             const infoDescricao = document.getElementById('infoDescricao');
 
             // Banco de dados mapeado contendo todos os 8 projetos reais ajustados (índices de 0 a 7)
-            const dadosProjetos = {
-                0: {
-                    titulo: "Estruturação Condicional do Verificador de Idade",
-                    descricao: "A lógica integrada a este script captura o ano corrente do sistema do usuário e realiza a subtração condicional. Com base nas condicionais encadeadas if/else, injeta dinamicamente o caminho da imagem de perfil correspondente à faixa etária encontrada."
-                },
-                1: {
-                    titulo: "Lógica Aritmética do Conversor de Tempo",
-                    descricao: "O algoritmo realiza operações matemáticas estruturadas de divisão inteira (`Math.floor`) para isolar as horas cheias contidas no input. O operador de módulo (`%`) é aplicado logo em seguida para renderizar de forma isolada os minutos remanescentes."
-                },
-                2: {
-                    titulo: "Métricas Técnicas da Calculadora",
-                    descricao: "Esta aplicação foi estruturada focando na manipulação direta do DOM via JavaScript puro (Vanilla JS). Tratamento estrito de strings para evitar falhas de execução matemática, escopos de funções bem delimitados e encapsulamento lógico adequado para garantir uma interface leve e veloz."
-                },
-                3: {
-                    titulo: "Arquitetura Estrutural do CRUD Quitanda",
-                    descricao: "O projeto Quitanda do Marcos valida o controle de estado e persistência temporária de arrays de objetos. Utiliza componentes de validação nativos em conjunto com as classes utilitárias de grid nativas do Bootstrap 5 para manter tabelas e formulários alinhados e responsivos em qualquer dispositivo de visualização."
-                },
-                4: {
-                    titulo: "Engenharia de Fluxo e Segurança de Login",
-                    descricao: "A interface de autenticação valida formatos de e-mail e força de senhas antes do envio do payload. A estrutura impede o disparo de requisições em branco e usa feedback reativo com classes condicionais do Bootstrap para assegurar conformidade de dados."
-                },
-                5: {
-                    titulo: "Lógica Avançada de Tratamento de Dados de Notas",
-                    descricao: "A aplicação de cálculo acadêmico opera por meio da conversão imediata de inputs do tipo string para números reais de ponto flutuante. Possui tratamento condicional de exceções e manipulação visual de classes CSS baseado em thresholds estipulados de aprovação."
-                },
-                6: {
-                    titulo: "Gestão Computacional de Conflito de Horários",
-                    descricao: "A lógica aplicada ao Scheduler realiza checagem cruzada de datas e horários no front-end para evitar inconsistências operacionais. O fluxo é limpo, reativo e estruturado para simular respostas imediatas em ambientes de gerenciamento corporativo."
-                },
-                7: {
-                    titulo: "Eficiência de Algoritmos na Consulta de Registros",
-                    descricao: "A ferramenta de busca implementa filtragem imediata sobre coleções indexadas de dados. A varredura reage a cada caractere inserido pelo usuário na barra de pesquisas, atualizando as tabelas DOM sem a necessidade de recarregar a página."
-                }
-            };
+           const dadosProjetos = 
+           {0: {
+        titulo: "Painel Institucional com Grid Bootstrap",
+        descricao: "Projeto desenvolvido para praticar o sistema de Grid do Bootstrap. A aplicação organiza informações em cartões responsivos, distribuindo o conteúdo de forma adaptável entre celulares, tablets e desktops. Foram aplicados conceitos de layout fluido, alinhamento e componentes visuais modernos."
+    },
+
+    1: {
+        titulo: "Arquitetura de Sistema Modular (TCC)",
+        descricao: "Interface principal de um sistema de gestão acadêmica desenvolvida utilizando Bootstrap. O projeto foi estruturado com foco em navegação intuitiva, separação modular de funcionalidades e responsividade, permitindo acesso eficiente aos módulos de usuários, relatórios e configurações."
+    },
+
+    2: {
+        titulo: "Calculadora Funcional Dinâmica",
+        descricao: "Aplicação construída com HTML, CSS e JavaScript para realizar operações matemáticas básicas em tempo real. O projeto utiliza manipulação do DOM, tratamento de eventos, validação de entradas e atualização dinâmica da interface sem necessidade de recarregamento da página."
+    },
+
+    3: {
+        titulo: "Quitanda do Marcos (Painel CRUD)",
+        descricao: "Sistema de gerenciamento de produtos que implementa as quatro operações fundamentais de um CRUD: criar, listar, editar e excluir registros. O projeto utiliza estruturas de dados em JavaScript e atualização dinâmica da interface para simular um sistema de estoque."
+    },
+
+    4: {
+        titulo: "Portal Corporativo de Autenticação",
+        descricao: "Tela de login moderna projetada com foco em experiência do usuário. Possui validação de formulários, verificação de campos obrigatórios, feedback visual imediato e organização responsiva dos elementos para diferentes dispositivos."
+    },
+
+    5: {
+        titulo: "Manipulação de Layouts Proporcionais e Breakpoints",
+        descricao: "Projeto voltado ao estudo avançado de responsividade. Foram aplicados conceitos de breakpoints, containers, grids e distribuição proporcional de elementos para garantir uma experiência consistente em diferentes resoluções de tela."
+    },
+
+    6: {
+        titulo: "Interface de E-Commerce e Conversão de Cotação",
+        descricao: "Página de exibição de produtos desenvolvida para simular um ambiente de comércio eletrônico. Além da apresentação visual dos itens, o sistema realiza conversão automática de valores em dólar para real utilizando operações matemáticas em JavaScript."
+    },
+
+    7: {
+        titulo: "Painel Avançado de Filtros e Consultas",
+        descricao: "Sistema de gerenciamento de registros com funcionalidades de busca dinâmica e filtragem instantânea. O projeto permite localizar informações em tempo real por meio da manipulação de arrays e atualização automática dos elementos exibidos na tela."
+    }
+};
 
             // Evento de clique para injetar o conteúdo mapeado com base no slide visível
             btnVerDetalhes.addEventListener('click', function () {
