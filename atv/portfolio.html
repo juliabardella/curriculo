@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Bardella | Portfólio de Projetos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-principal: #faf9f6;
+            --texto-escuro: #1a1a1a;
+            --texto-mutado: #5a5a5a;
+            --cor-destaque: #e04880;
+            --cor-suave: #fde8f0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f9;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background: rgba(250, 249, 246, 0.95) !important;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e4e1;
+        }
+
+        .nav-link-custom {
+            font-size: 0.95rem;
+            color: var(--texto-mutado) !important;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem !important;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .nav-link-custom:hover,
+        .nav-link-custom.active {
+            color: var(--cor-destaque) !important;
+            background: var(--cor-suave);
+            border-radius: 20px;
+        }
+
+        /* Carrossel customizado massivo */
+        .carousel-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .project-img-container {
+            background: #e2e8f0;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-img-container img {
+            max-width: 85%;
+            max-height: 380px;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+            border-radius: 12px;
+        }
+
+        .tech-tag {
+            background: #f3e5f5;
+            color: #7b1fa2;
+            border: 1px solid #d1c4e9;
+            padding: 6px 16px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 30px;
+        }
+
+        .btn-action {
+            background: linear-gradient(135deg, #7b1fa2, #4a148c);
+            color: white;
+            padding: 12px 32px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #7b1fa2;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #1e0933;
+            border-radius: 50%;
+            padding: 25px;
+            background-size: 40%;
+        }
+
+        footer {
+            background-color: #0f1115;
+            color: #94a3b8;
+            padding: 50px 0;
+            margin-top: auto;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1e222b;
+            color: #cbd5e1;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            background: #7b1fa2;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-dark" href="index.html">JB<span
+                    style="color:#7b1fa2">.</span></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto gap-2">
+                    <a class="nav-link nav-link-custom" href="index.html">Home</a>
+                    <a class="nav-link nav-link-custom active" href="portfolio.html">Portfólio</a>
+                    <a class="nav-link nav-link-custom" href="contato.html">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Meus Projetos Técnicos</h1>
+            <p class="fs-5 text-secondary max-width-600 mx-auto">Uma análise detalhada das aplicações de software
+                estruturadas de ponta a ponta.</p>
+        </div>
+
+        <div id="portfolioCarousel" class="carousel slide shadow-lg rounded-4" data-bs-ride="false">
+            <div class="carousel-indicators" style="bottom: -50px;">
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="5"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="6"></button>
+                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="7"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="my-page.png" alt="Interface Verificador de Idade">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">01. Painel Institucional com Grid Bootstrap</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Construção de uma página inicial de sistema utilizando o sistema de grid do Bootstrap
+                                para máxima responsividade. O layout organiza cartões coloridos e informativos de
+                                módulos, relatórios e configurações, adaptando-se automaticamente a diferentes tamanhos
+                                de tela. </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-git me-2"></i>Inspecionar Repositório</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="bem-vindo.png" alt="Interface Conversor de Tempo">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">02. Arquitetura de Sistema Modular (TCC)</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Desenvolvimento de interface principal para sistemas de gestão, fundamentada no sistema
+                                de Grid do Bootstrap. O layout modular organiza o acesso a funcionalidades como usuários
+                                e relatórios, garantindo navegabilidade e adaptabilidade total entre dispositivos.
+                            </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-box-arrow-up-right me-2"></i>Abrir Demonstração</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="calculadora.png" alt="Interface Projeto 3 (Calculadora)">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">03. Calculadora Funcional Dinâmica</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Desenvolvimento de uma aplicação web de alta precisão voltada para a execução de
+                                operações matemáticas básicas em tempo real, tratando escopo de dados e limpezas
+                                reativas com manipulação estruturada do DOM.
+                            </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-git me-2"></i>Inspecionar Repositório</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="quitanda.png" alt="Interface Projeto 4 (Quitanda do Marcos)">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">04. Quitanda do Marcos (Painel CRUD)</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Sistema de gestão e controle de estoque de produtos alimentícios. A aplicação implementa
+                                lógica assíncrona modular para realizar inserção, leitura de listas dinâmicas, edição de
+                                valores e exclusão segura.
+                            </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-box-arrow-up-right me-2"></i>Abrir Demonstração</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="login.png" alt="Interface Projeto 5 (Tela de Login)">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">05. Portal Corporativo de Autenticação</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Interface moderna de login projetada com foco absoluto em usabilidade e segurança. Conta
+                                com tratamento dinâmico de erros em formulários, validação em tempo real e feedback
+                                visual imediato para o usuário.
+                            </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-lock-fill me-2"></i>Ver Segurança</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="painel.png" alt="Interface Projeto 6 (Cálculo de Média)">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">06. Manipulação de Layouts Proporcionais e Breakpoints
+                            </h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                O desenvolvimento desta página foca no comportamento elástico do navegador. O código
+                                divide a tela de forma matemática para testar o comportamento de containers em
+                                resoluções de celulares, tablets e desktops simultaneamente. </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-mortarboard me-2"></i>Inspecionar Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="cadeira.png" alt="Interface Projeto 7 (Scheduler)">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">07. Interface de E-Commerce e Conversão de Cotação</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Página de visualização do cliente integrada a um sistema de vendas. Exibe o produto
+                                cadastrado em formato de card responsivo e realiza o cálculo de conversão monetária
+                                automática (US$ para R$) com base na cotação do dia. </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-calendar-event me-2"></i>Abrir Scheduler</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-0">
+                        <div class="col-lg-5 project-img-container">
+                            <img src="position_zindex.png" alt="Interface Projeto 8 (Data Search)">
+                        </div>
+                        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center bg-white">
+                            <h2 class="fw-bold mb-3 display-6">08. Painel Avançado de Filtros e Consultas</h2>
+                            <p class="fs-5 text-secondary lh-lg mb-4">
+                                Interface para gerenciamento de catálogos em tempo real com fluxo CRUD completo. Permite
+                                criar, ler, atualizar e excluir registros (foto, nome e preço) em tabelas dinâmicas com
+                                foco em organização. </p>
+                            <div>
+                                <a href="https://github.com/juliabardella" target="_blank" class="btn-action shadow"><i
+                                        class="bi bi-search me-2"></i>Testar Filtros</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <div class="text-center" style="margin-top: 80px; margin-bottom: 30px;">
+            <button id="btnVerDetalhes" class="btn btn-lg px-5 py-3 fw-bold rounded-pill text-white shadow"
+                style="background-color: #7b1fa2; border: none; font-size: 1.1rem; transition: 0.3s;">
+                <i class="bi bi-info-circle me-2"></i> Exibir Informações Corretas
+            </button>
+        </div>
+
+        <div id="containerInfo" class="p-5 bg-white border rounded-4 shadow-sm d-none mx-auto"
+            style="max-width: 900px;">
+            <h3 id="infoTitulo" class="fw-bold mb-3" style="color: #1e293b; font-size: 1.5rem;">Título Adicional</h3>
+            <p id="infoDescricao" class="text-muted lh-lg mb-0" style="font-size: 1.05rem; text-align: justify;">
+                As especificações técnicas corretas aparecem aqui.
+            </p>
+        </div>
+    </div>
+
+    <footer class="text-center mt-auto" style="padding: 70px 0 50px 0;">
+        <div class="container">
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://www.instagram.com/julia.bardella/" target="_blank" class="social-link"><i
+                        class="bi bi-instagram fs-5"></i></a>
+                <a href="https://www.linkedin.com/in/julia-bardella-649285415/" target="_blank" class="social-link"><i
+                        class="bi bi-linkedin fs-5"></i></a>
+                <a href="https://github.com/juliabardella" target="_blank" class="social-link"><i
+                        class="bi bi-github fs-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const portfolioCarousel = document.getElementById('portfolioCarousel');
+            const btnVerDetalhes = document.getElementById('btnVerDetalhes');
+            const containerInfo = document.getElementById('containerInfo');
+            const infoTitulo = document.getElementById('infoTitulo');
+            const infoDescricao = document.getElementById('infoDescricao');
+
+            // Banco de dados mapeado contendo todos os 8 projetos reais ajustados (índices de 0 a 7)
+            const dadosProjetos = {
+                0: {
+                    titulo: "Estruturação Condicional do Verificador de Idade",
+                    descricao: "A lógica integrada a este script captura o ano corrente do sistema do usuário e realiza a subtração condicional. Com base nas condicionais encadeadas if/else, injeta dinamicamente o caminho da imagem de perfil correspondente à faixa etária encontrada."
+                },
+                1: {
+                    titulo: "Lógica Aritmética do Conversor de Tempo",
+                    descricao: "O algoritmo realiza operações matemáticas estruturadas de divisão inteira (`Math.floor`) para isolar as horas cheias contidas no input. O operador de módulo (`%`) é aplicado logo em seguida para renderizar de forma isolada os minutos remanescentes."
+                },
+                2: {
+                    titulo: "Métricas Técnicas da Calculadora",
+                    descricao: "Esta aplicação foi estruturada focando na manipulação direta do DOM via JavaScript puro (Vanilla JS). Tratamento estrito de strings para evitar falhas de execução matemática, escopos de funções bem delimitados e encapsulamento lógico adequado para garantir uma interface leve e veloz."
+                },
+                3: {
+                    titulo: "Arquitetura Estrutural do CRUD Quitanda",
+                    descricao: "O projeto Quitanda do Marcos valida o controle de estado e persistência temporária de arrays de objetos. Utiliza componentes de validação nativos em conjunto com as classes utilitárias de grid nativas do Bootstrap 5 para manter tabelas e formulários alinhados e responsivos em qualquer dispositivo de visualização."
+                },
+                4: {
+                    titulo: "Engenharia de Fluxo e Segurança de Login",
+                    descricao: "A interface de autenticação valida formatos de e-mail e força de senhas antes do envio do payload. A estrutura impede o disparo de requisições em branco e usa feedback reativo com classes condicionais do Bootstrap para assegurar conformidade de dados."
+                },
+                5: {
+                    titulo: "Lógica Avançada de Tratamento de Dados de Notas",
+                    descricao: "A aplicação de cálculo acadêmico opera por meio da conversão imediata de inputs do tipo string para números reais de ponto flutuante. Possui tratamento condicional de exceções e manipulação visual de classes CSS baseado em thresholds estipulados de aprovação."
+                },
+                6: {
+                    titulo: "Gestão Computacional de Conflito de Horários",
+                    descricao: "A lógica aplicada ao Scheduler realiza checagem cruzada de datas e horários no front-end para evitar inconsistências operacionais. O fluxo é limpo, reativo e estruturado para simular respostas imediatas em ambientes de gerenciamento corporativo."
+                },
+                7: {
+                    titulo: "Eficiência de Algoritmos na Consulta de Registros",
+                    descricao: "A ferramenta de busca implementa filtragem imediata sobre coleções indexadas de dados. A varredura reage a cada caractere inserido pelo usuário na barra de pesquisas, atualizando as tabelas DOM sem a necessidade de recarregar a página."
+                }
+            };
+
+            // Evento de clique para injetar o conteúdo mapeado com base no slide visível
+            btnVerDetalhes.addEventListener('click', function () {
+                const slideAtivo = portfolioCarousel.querySelector('.carousel-item.active');
+                const indexAtivo = Array.from(slideAtivo.parentNode.children).indexOf(slideAtivo);
+
+                infoTitulo.textContent = dadosProjetos[indexAtivo].titulo;
+                infoDescricao.textContent = dadosProjetos[indexAtivo].descricao;
+
+                containerInfo.classList.remove('d-none');
+                containerInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+
+            // Reseta a caixa de dados ocultando-a ao rotacionar os slides do carrossel
+            portfolioCarousel.addEventListener('slide.bs.carousel', function () {
+                containerInfo.classList.add('d-none');
+            });
+        });
+    </script>
+</body>
+
+</html>

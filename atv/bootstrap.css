@@ -1,0 +1,163 @@
+/* Configurações Gerais do Corpo */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a2a4e;
+}
+
+/* Estilização do Cabeçalho/Navbar */
+.cabecalho {
+    background-color: transparent;
+}
+
+.navbar-nav .nav-link {
+    color: #1a2a4e !important;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+/* Botão Voltar */
+.button-voltar {
+    border: 1px solid #6f42c1;
+    color: #6f42c1;
+    background: white;
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+.button-voltar:hover {
+    background-color: #6f42c1;
+    color: white;
+}
+
+/* Container do Formulário */
+form.container {
+    background: #ffffff;
+    border: none !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    padding: 40px !important;
+}
+
+h2 {
+    color: #1a2a4e;
+    font-weight: 700;
+    margin-bottom: 30px !important;
+}
+
+/* Estilização dos Inputs (Floating Label Style) */
+.input-field {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.input-field label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+/* Efeito quando o input está focado ou tem conteúdo */
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    top: -15px;
+    font-size: 12px;
+    color: #1a2a4e;
+    font-weight: bold;
+}
+
+/* Estilização de Textareas e Selects */
+.form-control, .form-select {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.1);
+    border-color: #6f42c1;
+}
+
+/* Cor Favorita (Input Color) */
+.form-control-color {
+    width: 50px;
+    height: 35px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+/* Checkboxes e Radios */
+.form-check-label {
+    font-weight: 500;
+    color: #444;
+}
+
+.form-check-input:checked {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+/* Botão Enviar Estilizado */
+button[type="submit"], button:not(.button-voltar):not(.navbar-toggler) {
+    font-family: inherit;
+    font-size: 18px;
+    background: #5d5fef;
+    color: white;
+    padding: 0.7em 1.5em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+    transform: translateX(5em);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from { transform: translateY(0.1em); }
+  to { transform: translateY(-0.1em); }
+}
